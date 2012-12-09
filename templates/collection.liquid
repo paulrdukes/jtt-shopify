@@ -1,0 +1,42 @@
+<h2>{{ collection.title | escape }}</h2>
+
+
+{% if collection.tags.size != 0 %}
+<h3>Tags:</h3>
+<div id="tags">
+	{% if current_tags %}
+		<a href="{% if collection.handle == 'all'  %}/collections/all{% else %}{{ collection.url }}{% endif %}">All</a>
+	{% else %}
+		<a href="{% if collection.handle == 'all' %}/collections/all{% else %}{{ collection.url }}{% endif %}" class="current-tag">All</a>
+	{% endif %}
+	{% for tag in collection.all_tags %}
+    {% if current_tags contains tag %}
+    <li class="active">{{ tag | link_to_tag: tag }}</li>
+    {% else %}
+    <li>{{ tag | link_to_tag: tag }}</li>
+    {% endif %}
+	{% endfor %}
+</div>
+{% endif %}
+
+{% paginate collection.products by 20 %}
+	{% if collection.description.size > 0 %}
+	  <div class="collection-description">{{ collection.description }}</div>
+	{% endif %}
+{% if collection.products.size > 0 %}
+  <ul class="clearfix">
+    {% for product in collection.products | limit: 20 %}
+		{% include 'loop' %}
+    {% endfor %}
+  </ul>
+{% else %}
+	<p>There are no products in this collection.</p>
+{% endif %}
+
+{% if paginate.pages > 1 %}
+<div class="pagination">
+	{{ paginate | default_pagination }}
+</div>
+{% endif %}
+{% endpaginate %}
+

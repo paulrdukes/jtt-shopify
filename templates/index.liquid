@@ -1,0 +1,6 @@
+<div id="introduction">
+	{{ pages.frontpage.content }}
+</div>
+{% for product in collections.frontpage.products %}
+{% include 'loop' %}
+{% endfor %}

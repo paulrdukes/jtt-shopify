@@ -1,0 +1,18 @@
+{%if settings.sm_facebook || settings.sm_twitter || settings.sm_youtube || settings.sm_vimeo || settings.sm_flickr || settings.sm_google_plus  %}
+  
+    <ul id="sm-icons" class="footer-col clearfix">
+      {% if settings.sm_facebook %}<li id="sm-facebook"><a href="{{settings.sm_facebook_link}}" class="ir">Facebook</a></li>{% endif %}
+    
+      {% if settings.sm_google_plus %}<li id="sm-google-plus"><a href="{{settings.sm_google_plus_link}}" class="ir">Google +</a></li>{% endif %}
+    
+      {% if settings.sm_flickr %}<li id="sm-flickr"><a href="{{settings.sm_flickr_link}}" class="ir">Flickr</a></li>{% endif %}
+    
+      {% if settings.sm_twitter %}<li id="sm-twitter"><a href="{{settings.sm_twitter_link}}" class="ir">Twitter</a></li>{% endif %}
+    
+      {% if settings.sm_vimeo %}<li id="sm-vimeo"><a href="{{settings.sm_vimeo_link}}" class="ir">Vimeo</a></li>{% endif %}
+    
+      {% if settings.sm_youtube %}<li id="sm-youtube"><a href="{{settings.sm_youtube_link}}" class="ir">YouTube</a></li>{% endif %}
+      
+    </ul>
+
+{% endif %}

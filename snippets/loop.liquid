@@ -1,0 +1,21 @@
+<div class="product clearfix">
+		<div class="product-title">
+			<h3><a href="{{ product.url }}" alt="{{ product.title}}">{{ product.title }}</a></h3>
+		</div>
+		
+		<div class="product-price">
+			{% if product.price_varies %} 
+			{{ product.price_min | money }} - {{ product.price_max | money }}       
+			{% else %}
+			{{ product.price | money }}
+			{% endif %}
+		</div>
+		
+		<div class="product-wrap" >
+			<a href="{{ product.url }}" alt="{{ product.title}}">
+					<img class="product-image" src="{{ product.featured_image | product_img_url: 'compact' }}"  alt="{{ product.title }}"/>
+			</a>
+			
+			{{ product.description }}
+		</div>
+</div>

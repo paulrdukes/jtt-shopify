@@ -1,0 +1,7 @@
+    	<div id="login">
+			  {% if customer  %}
+			    <a href="/account">Welcome {{ customer.first_name }}</a> | {{ "Logout" | customer_logout_link }}
+			  {% else %}
+			    {{ "Login" | customer_login_link }}
+			  {% endif %}
+		</div>

@@ -1,0 +1,52 @@
+<h2>{{ product.title }}</h2>
+
+<div id="product-selection">
+	<form action="/cart/add" method="post" id="add-to-cart">
+		<!-- Hide title + dropdown if the product has default option and variant name. -->
+		<div id="product-variants" {% if product.options.first == "Title" and product.variants.first.title == "Default Title" %}style="display:none;"{% endif %}>
+			<div id="price-field"></div>
+			<!-- Show Option title even if there is only one option. -->
+			{% if product.options.size == 1 %}<label for="product-select-option-0">{{ product.options.first }}</label>{% endif %}
+			<select id="product-select" name='id'>
+				{% for variant in product.variants %}
+				<option value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money }}</option>
+				{% endfor %}
+			</select>
+		</div>
+		<input type="submit" name="add" value="add to cart"/>
+	</form>
+</div>
+
+<div id="product-description">{{ product.description }}</div>
+
+<div id="product-main-image">
+<a href="{{ product.images.first | product_img_url: 'original'}}">
+	<img src="{{ product.images.first | product_img_url: 'medium' }}" alt="{{ product.title | escape }}" />
+</a>
+</div>
+
+{% if product.images.size > 1 %}
+<ul id="product-thumbs">
+	{% for image in product.images %}
+	{% if forloop.index != 1 %}
+	<li>
+		<a href="{{ image | product_img_url :'original' }}" class="product-thumbs" title="{{product.title | escape }}" >
+			<img src="{{ image | product_img_url: 'thumb'}}" alt="{{product.title | escape }}" />
+		</a>
+	</li>
+	{% endif %}
+	{% endfor %}
+</ul>
+{% endif %}  
+
+
+{% if collection %}            
+<div id="product-navigate">
+	{% if collection.previous_product %}
+	<p>{{ '&laquo; Prev' | link_to: collection.previous_product }}</p>
+	{% endif %}
+	{% if collection.next_product %}
+	<p>{{ 'Next &raquo;' | link_to: collection.next_product }}</p>
+	{% endif %}
+</div>
+{% endif %}

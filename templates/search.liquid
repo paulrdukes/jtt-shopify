@@ -1,0 +1,40 @@
+{% paginate search.results by 20 %}
+<h2>Search</h2>
+
+<form method="get" action="/search">
+	<input type="text" name="q"{% if search.performed %} value="{{ search.terms | escape | downcase }}"{% endif %} class="field" /> 
+	<input type="submit" value="Search" class="search-btn button" />
+</form>
+
+{% if search.results == empty %}
+<p>Your search for "{{ search.terms | escape | downcase }}" did not yield any results.</p>
+{% else %}
+
+<ul id="results">
+{% for item in search.results %}
+<li>
+
+<!--If the search result is a product -->
+{% if item.featured_image %}
+<h3><a href="{{ item.url | within: collections.all }}">{{ item.title | escape }}</a></h3>
+<a href="{{ item.url | within: collections.all }}"><img src="{{ item.featured_image | product_img_url: "small" }}" alt="{{ item.title | escape }}" /></a>
+<p>{{ item.price | money }}{% if item.compare_at_price_max > item.price %} <em> {{ item.compare_at_price_max | money }}</em>{% endif %}</p>
+<p>{{ item.description | highlight: search.terms}}</p>
+
+<!--If the search result is NOT a product -->
+{% else %}
+<h3><a href="{{ item.url }}">{{ item.title | escape }}</a></h3>
+<p>{{ item.content | strip_html | strip_newlines |  highlight: search.terms }}</p>
+{% endif %}
+
+</li>
+{% endfor %}
+</ul>
+
+{% if paginate.pages > 1 %}
+<div class="pagination">
+	{{ paginate | default_pagination }}
+</div>
+{% endif %}
+{% endif %}
+{% endpaginate %}
