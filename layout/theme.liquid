@@ -6,13 +6,26 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>{{ shop.name }}</title>
-        <meta name="description" content="">
+      
+        {% if template ==  'index' %}    
+          <title>{{ shop.name }} | {{ shop.description }}</title>
+        {% elseif %}
+           <title>{{ page_title }} | {{ shop.name }}</title>
+        {% endif %}
+        
+        {% if template contains 'product' %}
+          <meta name="description" content="{{ product.description | strip_html | strip_newlines | truncate: maxmeta | escape }}" />
+        {% elseif shop.description != '' %}
+          <meta name="description" content="{{ shop.description }}" />
+        {% endif %}
+        
+        <link rel="canonical" href="{{ canonical_url }}" />
+        
         <meta name="viewport" content="width=device-width">
-
-        <link rel="stylesheet" href=" {{ 'style.css' | asset_url }}">
-
-        <script src="{{ 'modernizr-2.6.2-respond-1.1.0.min.js' | asset_url }}"></script>
+       
+        
+        {{ 'style.css' | asset_url | stylesheet_tag }}
+        {{ 'modernizr-2.6.2-respond-1.1.0.min.js' | asset_url | script_tag }}
 
         {{ content_for_header }}
     </head>
@@ -23,7 +36,11 @@
         <![endif]-->
        
        <div id="aside">
-         <h1 class="title"> {{shop.name}} </h1>
+         {% if settings.use_logo_image %}
+          <img src="{{ 'logo.png' | asset_url }}" />
+         {% else %}
+          <h1 class="title"> {{shop.name}} </h1>
+         {% endif %}
             <div id="nav">
                <ul>
                    {% for link in linklists.main-menu.links %}
@@ -32,10 +49,8 @@
                </ul>
             </div>
             {% include 'login' %}
-            {% include 'cart' %}
-            {% include 'search' %}
             {% include 'social' %}
-            {% include 'powered-by' %}
+            
        </div>
        
        <div id="main">
@@ -43,11 +58,13 @@
        </div>
        <div id="footer"> 
         {% include 'powered-by' %}
+        {% include 'cart' %}
+        {% include 'search' %}
        </div>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.3.min.js"><\/script>')</script>
-        <script src="{{ 'jquery-1.8.3.min.js' | asset_url }}"></script>
-        <script src="{{ 'main.js' | asset_url}}"></script>
+        {{ 'jquery-1.8.3.min.js' | asset_url | script_tag }}
+        {{ 'main.js' | asset_url | script_tag }}
         
         {% include 'analytics' %}
           

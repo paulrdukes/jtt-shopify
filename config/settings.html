@@ -46,7 +46,7 @@
     			</td>
     		</tr>
     		<tr>
-    			<td><label for="logo_size">Logo Case</label></td>
+    			<td><label for="logo_size">Logo Size</label></td>
     			<td>
     				<select id="logo_size" name="logo_size">
     					<option value="2em">2em</option>
@@ -62,6 +62,7 @@
     			<td><label for="logo_case">Logo Case</label></td>
     			<td>
     				<select id="logo_case" name="logo_case">
+    					<option value="">Show as typed</option>
     					<option value="uppercase" selected="selected">Uppercase</option>
     					<option value="lowercase">Lowercase</option>
     					<option value="capitalize">Capitalize</option>
@@ -102,7 +103,7 @@
 				<td><label for="nav_text_color">Navigation Text Color</label></td>
 				<td><input type="text" id="nav_text_color" name="nav_text_color" class="color" value="" /></td>
 			</tr>
-			
+						
 			<tr>
 				<td><label for="nav_text_hover_color">Navigation Text Hover Color</label></td>
 				<td><input type="text" id="nav_text_hover_color" name="nav_text_hover_color" class="color" value="" /></td>
@@ -152,7 +153,7 @@
 		<table>
 			<tr>
 				<td><label for="background_color">Background Color</label></td>
-				<td><input type="text" id="background_color" name="background_color" class="color" value="#cccccc" /></td>
+				<td><input type="text" id="background_color" name="background_color" class="color" value="" /></td>
 			</tr>
 			
 			<tr>
@@ -200,37 +201,37 @@
 		      <td>Show</td>
 		    </tr>
 		    <tr>
-		    	<td>Facebook</td>
+		    	<td><label for="sm_facebook_link">Facebook</label></td>
 		    	<td><input type="text" id="sm_facebook_link" name="sm_facebook_link" value="http://www.facebook.com" class="long" /></td>
 		    	<td><input type="checkbox" id="sm_facebook" name="sm_facebook" value="1" checked="checked" /></td>
 		    </tr>
 		    
 		    <tr>
-		     	<td>Flickr</td>
+		     	<td><label for="sm_flickr_link">Flickr</label></td>
 		     	<td><input type="text" id="sm_flickr_link" name="sm_flickr_link" value="http://www.flickr.com" class="long" /></td>
 		     	<td><input type="checkbox" id="sm_flickr" name="sm_flickr" value="1" checked="checked" /></td>
 		    </tr>
 		    
 		    <tr>
-		    	<td>Google +</td>
+		    	<td><label for="sm_google_plus_link">Google +</label></td>
 		    	<td><input type="text" id="sm_google_plus_link" name="sm_google_plus_link" value="http://plus.google.com" class="long"/></td>
 		    	<td><input type="checkbox" id="sm_google_plus" name="sm_google_plus" value="1" checked="checked"/></td>
 		    </tr>
 		    
 		    <tr>
-		    	<td>Twitter</td>
+		    	<td><label for="sm_twitter_link">Twitter</label></td>
 		    	<td><input type="text" id="sm_twitter_link" name="sm_twitter_link" value="http://www.twitter.com" class="long" /></td>
 		    	<td><input type="checkbox" id="sm_twitter" name="sm_twitter" value="1" checked="checked" /></td>
 		    </tr>
 		    
 		    <tr>
-		    	<td>Viemo</td>
+		    	<td><label for="sm_vimeo_link">Viemo</label></td>
 		    	<td><input type="text" id="sm_vimeo_link" name="sm_vimeo_link" value="http://www.viemo.com" class="long" /></td>
 		    	<td><input type="checkbox" id="sm_vimeo" name="sm_vimeo" value="1" checked="checked"/></td>
 		    </tr>
 		    
 		    <tr>
-		    	<td>YouTube</td>
+		    	<td><label>YouTube</label></td>
 		    	<td><input type="text" id="sm_youtube_link" name="sm_youtube_link" value="http://www.youtube.com" class="long" /></td>
 		    	<td><input type="checkbox" id="sm_youtube" name="sm_youtube" value="1" checked="checked" /></td>
 		    </tr>
@@ -243,17 +244,22 @@
     <legend>Additional Options</legend>
 	<table>
 		<tr>
-			<td>Google Analytics</td>
+			<td><label>Border Radius</label></td>
+			<td><input type="checkbox" id="radius_selected" name="radius_selected" value="1" checked="checked" /></td>
+			
+		</tr>
+		<tr>
+			<td><label>Google Analytics</label></td>
 			<td>UA-<input id="google_analytics_id" name="google_analytics_id" value="XXXXXX-X" class="long" /></td>
 			<td><input type="checkbox" id="google_analytics" name="google_analytics" value="1" checked="checked" /></td>
 		</tr>
 		<tr>
-			<td>Powered by Shopify</td>
+			<td><label>Powered by Shopify</label></td>
 			<td><input type="checkbox" id="powered_by" name="powered_by" value="1" checked="checked" /></td>
 		</tr>
 		
 		<tr>
-			<td>Search</td>
+			<td><label>Search</label></td>
 			<td><input type="checkbox" id="search_on" name="search_on" value="1" checked="checked" />
 			</td>
 		</tr>
