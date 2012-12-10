@@ -22,23 +22,28 @@
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
        
-       <div id="nav">
-           <ul>
-               {% for link in linklists.main-menu.links %}
-               <li><a href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a> </li>
-               {% endfor}
-           </ul>
-
-           
-            <div id="powered-by">
-                <a href="/" class="shop-name">{{ shop.name }}</a>. &copy; {{ 'now' | date: '%Y' }} All Rights Reserved.</br> {{ powered_by_link }} 
+       <div id="aside">
+         <h1 class="title"> {{shop.name}} </h1>
+            <div id="nav">
+               <ul>
+                   {% for link in linklists.main-menu.links %}
+                   <li><a href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a> </li>
+                   {% endfor %}
+               </ul>
             </div>
+            {% include 'login' %}
+            {% include 'cart' %}
+            {% include 'search' %}
+            {% include 'social' %}
+            {% include 'powered-by' %}
        </div>
        
        <div id="main">
             {{ content_for_layout }}
        </div>
-       
+       <div id="footer"> 
+        {% include 'powered-by' %}
+       </div>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.3.min.js"><\/script>')</script>
         <script src="{{ 'jquery-1.8.3.min.js' | asset_url }}"></script>

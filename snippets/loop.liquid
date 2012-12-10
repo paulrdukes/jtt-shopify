@@ -1,4 +1,5 @@
 <div class="product clearfix">
+	<div class="product-header clearfix">
 		<div class="product-title">
 			<h3><a href="{{ product.url }}" alt="{{ product.title}}">{{ product.title }}</a></h3>
 		</div>
@@ -10,8 +11,8 @@
 			{{ product.price | money }}
 			{% endif %}
 		</div>
-		
-		<div class="product-wrap" >
+	</div>
+		<div class="product-wrapper" >
 			<a href="{{ product.url }}" alt="{{ product.title}}">
 					<img class="product-image" src="{{ product.featured_image | product_img_url: 'compact' }}"  alt="{{ product.title }}"/>
 			</a>

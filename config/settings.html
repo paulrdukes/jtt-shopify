@@ -1,11 +1,13 @@
 
 <div class="section-info">
 <p>Theme settings allow designers to provide an easy way for any user to customize the look and feel of their shop without having to delve into HTML or CSS code. Please see our <a title="Open Wiki in a new window" target="wiki" href="http://wiki.shopify.com/Theme_Settings">help page on theme settings</a> to learn more about how you can make your theme customizable.</p>
+
+
 </div>
 
 <fieldset>
     <legend>Logo</legend>
-    	<table>
+        <table>
     		<tr>	
     			<td><label for="use_logo_image">Use a custom logo?</label></td>
     			
@@ -17,10 +19,11 @@
   				<td><label>Site logo</label></td>
   				<td>
   					<select for="logo_image" id="logo_image">
-  						<option value="logo.png" selected="sleected">logo.png</option>
+  						<option value="logo.png" selected="selected">logo.png</option>
   					</select>
   				</td>	
     		</tr>
+    		    		
  <!--Change data variables if you wish to add a larger logo image -->  		
     		<tr>
     			<td><label for="logo_image_upload">Upload your logo</label></td>
@@ -28,8 +31,95 @@
     				<input type="file" id="logo_image_upload" name="logo.png" data-max-width="" data-max-height="" />
     			</td>
     		</tr>
+    		
+	    	<tr> 
+	    		<td colspan="2"><hr /> If you're not using a logo image use this section to change the font and font color. 
+	    		</td>
+    		</tr>
+    			<tr>
+    			<td><label for="logo_font">Logo Font</label></td>
+    			<td>
+    				<select class="font" id="logo_font" name="logo_font" >
+    					<option value="BebasRegular, sans-serif">Bebas Regular</option>
+    					<option value="LeagueGothicRegular, sans-serif" selected="selected">League Gothic</option>
+    				</select>
+    			</td>
+    		</tr>
+    		<tr>
+    			<td><label for="logo_size">Logo Case</label></td>
+    			<td>
+    				<select id="logo_size" name="logo_size">
+    					<option value="2em">2em</option>
+    					<option value="3em">3em</option>
+    					<option value="4em">4em</option>
+    					<option value="5em">5em</option>
+    					<option value="6em" selected="selected">6em</option>
+    				</select>
+    					
+    			</td>
+    		</tr>	
+    		<tr>
+    			<td><label for="logo_case">Logo Case</label></td>
+    			<td>
+    				<select id="logo_case" name="logo_case">
+    					<option value="uppercase" selected="selected">Uppercase</option>
+    					<option value="lowercase">Lowercase</option>
+    					<option value="capitalize">Capitalize</option>
+    				</select>
+    					
+    			</td>
+    		</tr>	
+    		<tr>
+    			<td><label for="logo_color">Logo Color</label></td>
+    			<td><input type="text" id="logo_color" name="logo_color" class="color"/></td>
+    		</tr>
     	</table>
 </fieldset>
+<fieldset>
+	<legend>Navigation</legend>
+		<table>
+			<tr>
+				<td><label for="nav_font">Navigation Font</label><small>(includes Cart, login, search, etc.)</small></td>
+				<td>
+					<select class="font" name="nav_font" id="nav_font">
+						<option value="BebasRegular, sans-serif">Bebas Regular</option>
+						<option value="OSPDIN, sans-serif">OSP-DIN</option>
+					</select>
+				</td>
+			</tr>
+			
+			<tr>
+				<td><label for="nav_text_align">Navigation Text Align</label></td>
+				<td>
+					<select name="nav_text_align" id="nav_text_align">
+				 		<option value="left" selected="selected">Left</option>
+						<option value="center">Center</option>
+						<option value="right">Right</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td><label for="nav_text_color">Navigation Text Color</label></td>
+				<td><input type="text" id="nav_text_color" name="nav_text_color" class="color" value="" /></td>
+			</tr>
+			
+			<tr>
+				<td><label for="nav_text_hover_color">Navigation Text Hover Color</label></td>
+				<td><input type="text" id="nav_text_hover_color" name="nav_text_hover_color" class="color" value="" /></td>
+			</tr>
+			
+			<tr>
+				<td><label for="nav_background_color">Navigation Background Color</label></td>
+				<td><input type="text" id="nav_background_color" name="nav_background_color" class="color" value="" /></td>
+			</tr>	
+		
+			<tr>
+				<td><label for="nav_background_hover_color">Navigation Background Hover Color</label></td>
+				<td><input type="text" id="nav_background_hover_color" name="nav_background_hover_color" class="color" value="" /></td>
+			</tr>	
+		</table>
+</fieldset>
+
 <fieldset>
 	<legend>Text</legend>
 		<table>
@@ -40,40 +130,132 @@
 						<option value="" selected="selected"></option>
 					</select>
 				</td>
-				<td><label for="header_font_color">Header text color</label></td>
-				<td><input type="text" id="header_font_color" name="header_font_color" class="color" value="" /></td>
+				<td><label for="header_text_color">Header text color</label></td>
+				<td><input type="text" id="header_text_color" name="header_text_color" class="color" value="" /></td>
 			</tr>
-												
+									
+			<tr>
+				<td><label for="body_font">Body Font</label></td>
+				<td>
+					<select class="font" name="body_font" id="body_font">
+						<option value="" selected="selected"></option>
+					</select>
+				</td>
+				<td><label for="body_text_color">Body Text Color</label></td>
+				<td><input type="text" id="body_text_color" name="body_text_color" class="color" value="#222222" /></td>
+			</tr>
 		</table>
 </fieldset>
 
 <fieldset>
 	<legend>Background Colors</legend>
 		<table>
+			<tr>
+				<td><label for="background_color">Background Color</label></td>
+				<td><input type="text" id="background_color" name="background_color" class="color" value="#cccccc" /></td>
+			</tr>
 			
-			Background color
-			colomn background color(s)
-			footer background color
-			Button background
+			<tr>
+				<td><label for="sidebar_background_color">Sidebar Background Color</label></td>
+				<td><input type="text" id="sidebar_background_color" name="sidebar_background_color" class="color" value="" /></td>
+			</tr>
+			
+			<tr>
+				<td><label for="header_background_color">Header Background Color</label></td>
+				<td><input type="text" id="header_background_color" name="header_background_color" class="color" value="" /></td>
+			</tr>
+			<tr>
+				<td><label for="footer_background_color">Foooter Background Color</label></td>
+				<td><input type="text" id="footer_background_color" name="footer_background_color" class="color" value="" /></td>
+			</tr>
+			
+			<tr>
+				<td><label for="buttons_background_color">Buttons Background Color</label></td>
+				<td><input type="text" id="buttons_background_color" name="buttons_background_color" class="color" value="" /></td>
+			</tr>
 			
 		</table>
 </fieldset>
 
 
-<fieldset>
-	<legend>Social Media</legend>
-		<table>
-			
-			
-			
-		</table>
-</fieldset>
+
 
 <fieldset>
 	<legend>Footer</legend>
-		<table>
-			
-			
-			
-		</table>
+	<table>
+
+	</table>
+</fieldset>
+<fieldset>
+	<legend>Social Media</legend>
+   		<table class="standard-table">
+   			<tr>
+   				<td colspan="3">
+   				 Insert info regarding how to add new social icons based on those available in the font
+   				</td>
+   			</tr>
+   			<tr>
+		      <td></td>      
+		      <td>Link to</td>
+		      <td>Show</td>
+		    </tr>
+		    <tr>
+		    	<td>Facebook</td>
+		    	<td><input type="text" id="sm_facebook_link" name="sm_facebook_link" value="http://www.facebook.com" class="long" /></td>
+		    	<td><input type="checkbox" id="sm_facebook" name="sm_facebook" value="1" checked="checked" /></td>
+		    </tr>
+		    
+		    <tr>
+		     	<td>Flickr</td>
+		     	<td><input type="text" id="sm_flickr_link" name="sm_flickr_link" value="http://www.flickr.com" class="long" /></td>
+		     	<td><input type="checkbox" id="sm_flickr" name="sm_flickr" value="1" checked="checked" /></td>
+		    </tr>
+		    
+		    <tr>
+		    	<td>Google +</td>
+		    	<td><input type="text" id="sm_google_plus_link" name="sm_google_plus_link" value="http://plus.google.com" class="long"/></td>
+		    	<td><input type="checkbox" id="sm_google_plus" name="sm_google_plus" value="1" checked="checked"/></td>
+		    </tr>
+		    
+		    <tr>
+		    	<td>Twitter</td>
+		    	<td><input type="text" id="sm_twitter_link" name="sm_twitter_link" value="http://www.twitter.com" class="long" /></td>
+		    	<td><input type="checkbox" id="sm_twitter" name="sm_twitter" value="1" checked="checked" /></td>
+		    </tr>
+		    
+		    <tr>
+		    	<td>Viemo</td>
+		    	<td><input type="text" id="sm_vimeo_link" name="sm_vimeo_link" value="http://www.viemo.com" class="long" /></td>
+		    	<td><input type="checkbox" id="sm_vimeo" name="sm_vimeo" value="1" checked="checked"/></td>
+		    </tr>
+		    
+		    <tr>
+		    	<td>YouTube</td>
+		    	<td><input type="text" id="sm_youtube_link" name="sm_youtube_link" value="http://www.youtube.com" class="long" /></td>
+		    	<td><input type="checkbox" id="sm_youtube" name="sm_youtube" value="1" checked="checked" /></td>
+		    </tr>
+		 
+    </table>
+</fieldset>
+
+<fieldset>
+	<!-- add more options for analytics -->
+    <legend>Additional Options</legend>
+	<table>
+		<tr>
+			<td>Google Analytics</td>
+			<td>UA-<input id="google_analytics_id" name="google_analytics_id" value="XXXXXX-X" class="long" /></td>
+			<td><input type="checkbox" id="google_analytics" name="google_analytics" value="1" checked="checked" /></td>
+		</tr>
+		<tr>
+			<td>Powered by Shopify</td>
+			<td><input type="checkbox" id="powered_by" name="powered_by" value="1" checked="checked" /></td>
+		</tr>
+		
+		<tr>
+			<td>Search</td>
+			<td><input type="checkbox" id="search_on" name="search_on" value="1" checked="checked" />
+			</td>
+		</tr>
+	</table>
 </fieldset>

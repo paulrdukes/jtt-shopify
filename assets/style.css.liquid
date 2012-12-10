@@ -4,7 +4,7 @@
  *
  * Last update: Dec. 8 2012
  *
- * @version     0.1
+ * @version     0.5
  * @author      Paul Dukes @paulrdukes
  * @github      https://github.com/paulrdukes/jtt-shopify
  *
@@ -15,7 +15,6 @@
  */
 
 /* ! normalize.css v1.0.1 | MIT License | git.io/normalize */
-
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, summary { display: block; }
 audio, canvas, video { display: inline-block;  *display: inline; *zoom: 1; }
 audio:not([controls]) { display: none; height: 0; }
@@ -67,15 +66,55 @@ textarea { overflow: auto; vertical-align: top; }
 table { border-collapse: collapse; border-spacing: 0; }
 
 
-
 /*
- * HTML5 Boilerplate styles - h5bp.com (generated via initializr.com)
+ * Fonts
+ * All fonts available at http://www.fontsquirrel.com
  */
 
-html, button, input, select, textarea { color: #222; }
+/*
+ * League Gothic Regular
+ *
+ * This Font Software is licensed under the SIL Open Font License, Version 1.1.
+ * This license is copied below, and is also available with a FAQ at:
+ * http://scripts.sil.org/OFL
+ */
+ @font-face {
+    font-family: 'LeagueGothicRegular';
+    src: url('League_Gothic-webfont.eot');
+    src: url('League_Gothic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('League_Gothic-webfont.woff') format('woff'),
+         url('League_Gothic-webfont.ttf') format('truetype'),
+         url('League_Gothic-webfont.svg#LeagueGothicRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*
+ * Bebas Regular
+ *
+ * All fonts copyright Flat-it(http://flat-it.com/)
+ * This is a freeware typeface.
+ */
+
+@font-face {
+    font-family: 'BebasRegular';
+    src: url('BEBAS___-webfont.eot');
+    src: url('BEBAS___-webfont.eot?#iefix') format('embedded-opentype'),
+         url('BEBAS___-webfont.woff') format('woff'),
+         url('BEBAS___-webfont.ttf') format('truetype'),
+         url('BEBAS___-webfont.svg#BebasRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*
+ * HTML5 Boilerplate styles
+ */
+
+html, button, input, select, textarea { color: {{ settings.body_text_color }}; }
 body { 
     font: 1em/1.4 {{ settings.body_font }}; 
-    background-color: #777;
+    background: {{ settings.background_color }};
 }
 
 ::-moz-selection { background: #b3d4fc; text-shadow: none; }
@@ -106,116 +145,195 @@ textarea { resize: vertical; }
     padding: 0.2em 0;
 }
 
+/*
+ * Icon Fonts
+ */
+@font-face {
+  font-family: "SocialFoundicons";
+  src: url("social_foundicons.eot");
+  src: url("social_foundicons.eot?#iefix") format("embedded-opentype"),
+       url("social_foundicons.woff") format("woff"),
+       url("social_foundicons.ttf") format("truetype"),
+       url("social_foundicons.svg#SocialFoundicons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* global foundicon styles */
+[class*="foundicon-"] {
+  font-size: 2em;
+  display: inline;
+  width: auto;
+  height: auto;
+  line-height: inherit;
+  vertical-align: baseline;
+  background-image: none;
+  background-position: 0 0;
+  background-repeat: repeat;
+}
+
+[class*="foundicon-"]:before {
+  font-family: "SocialFoundicons";
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+}
+
+.foundicon-thumb-up:before { content: "\f000"; }
+.foundicon-thumb-down:before { content: "\f001"; }
+.foundicon-rss:before { content: "\f002"; }
+.foundicon-facebook:before { content: "\f003"; }
+.foundicon-twitter:before { content: "\f004"; }
+.foundicon-pinterest:before { content: "\f005"; }
+.foundicon-github:before { content: "\f006"; }
+.foundicon-path:before { content: "\f007"; }
+.foundicon-linkedin:before { content: "\f008"; }
+.foundicon-dribbble:before { content: "\f009"; }
+.foundicon-stumble-upon:before { content: "\f00a"; }
+.foundicon-behance:before { content: "\f00b"; }
+.foundicon-reddit:before { content: "\f00c"; }
+.foundicon-google-plus:before { content: "\f00d"; }
+.foundicon-youtube:before { content: "\f00e"; }
+.foundicon-vimeo:before { content: "\f00f"; }
+.foundicon-flickr:before { content: "\f010"; }
+.foundicon-slideshare:before { content: "\f011"; }
+.foundicon-picassa:before { content: "\f012"; }
+.foundicon-skype:before { content: "\f013"; }
+.foundicon-steam:before { content: "\f014"; }
+.foundicon-instagram:before { content: "\f015"; }
+.foundicon-foursquare:before { content: "\f016"; }
+.foundicon-delicious:before {   content: "\f017"; }
+.foundicon-chat:before { content: "\f018"; }
+.foundicon-torso:before { content: "\f019"; }
+.foundicon-tumblr:before { content: "\f01a"; }
+.foundicon-video-chat:before { content: "\f01b"; }
+.foundicon-digg:before { content: "\f01c"; }
+.foundicon-wordpress:before { content: "\f01d"; }
+
 /* 
  * General Selectors 
  */
 .wrapper{
     width:960px;
-    max-width: 100%;
+   
 }
 
-#nav{
-    width: 33.333%;
-    max-width: 320px;
-    background-color: #333;
-   
+#aside{
+   /* width: 33.333%; -- for responsive design */
+    width: 320px;
+    background-color: #555;
     position: fixed;
-    top:0;
     left:0;
-
+    top:0;
+    height: 768px;
     -webkit-box-shadow: 2px 0 12px #333;
     -moz-box-shadow: 2px 0 12px #333;
     box-shadow: 2px 0 12px #333;
 }
+#nav {}
+#nav ul{ 
+    width:100%; 
+    padding:0;
+}
+#nav ul li{ 
+    border-top: 2px solid {{ settings.body_text_color }};
+    list-style: none;  
+    margin:0;
+   
+}
+#nav ul li:last-child{ border-bottom: 2px solid {{ settings.body_text_color }}; }
+#nav a{
+    display: block;  
+    padding: 1.5625% 10px; 
+    text-decoration: none;
 
-#nav ul{}
-#nav ul li{}
-#nav ul li a{}
+} 
+#nav a:hover { background-color: #999; }
+
+#login{ float: left; margin: 10px; }
+#cart { float: right; margin: 10px; }
+#search{ clear: both;}
+#search form{ padding:10px; }
+#search input[type="text"],#search input[type="text"]:focus{
+    border:none;
+}
+#search button{ 
+    border: none;
+    background-color: #08aacc;
+    color:#555;  
+}
+#search button:hover{background-color:#97ccee; }
+
+#social ul li{list-style: none; display: inline-block;}
+a {text-decoration: none; color:#08aacc;}
+a:hover { color:#97ccee;}
+
+#powered-by{ margin:10px 5px; font-size: 0.8em; }
+
 
 #main{
-    width:64.583%;
-    max-width:620px;
+    /* width:64.583%; -- for responsive design */
+    width:620px;
 
-    margin-left:2.083%;
-    border-right:solid 1px black;
+    margin-left: 20px; /* 2.083%; */
+
     float: right;
     height: 300px;
 }
+.title{
+    margin:0 0 0 10px; 
+    padding:0;
+    font-size: {{ settings.logo_size}};
+    text-shadow: 0 0 3px {{ settings.body_text_color }};
+}
+h1,h2,h3,h4,h5,h6{
+    color:#ae1215; 
+    font-family: {{settings.logo_font}}; 
+    text-transform: {{settings.logo_case}};
+}
 
-#powerd-by{}
-
-
-/* 
- * Media Queries
+/*
+ * Product Selectors
  */
+.product{  margin: 0; padding: 0;}
+.product-header{ border-bottom:2px solid #97ccee; }
+    .product-title { float:left; }
+    .product-price { float: right; }
 
+.product-wrapper{}
+    .product-image{
+        border:1px solid {{ settings.body_text_color }};
+        float:left; 
+        margin: 0 10px 10px 0; 
+    }
+/* 
+ * Media Queries 
+
+@media screen and (max-width: 480px){
+    #aside, #main, #footer{min-width: 100%; margin: 0; padding:0; box-shadow: 0 0 0;}
+    #aside{position: relative;}
+    #social, #aside #powered-by{ display: none !important; visibility: hidden; }
+    #footer { visibility: visible !important; display: block; }
+}
+ */
 /* 
  * Helper classes
  */
-
-.ir {
-    background-color: transparent;
-    border: 0;
-    overflow: hidden;
-    *text-indent: -9999px;
-}
-
-.ir:before {
-    content: "";
-    display: block;
-    width: 0;
-    height: 100%;
-}
-
-.hidden {
-    display: none !important;
-    visibility: hidden;
-}
-
-.visuallyhidden {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-}
-
-.visuallyhidden.focusable:active,
-.visuallyhidden.focusable:focus {
-    clip: auto;
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    position: static;
-    width: auto;
-}
-
-.invisible { visibility: hidden; }
-
-.clearfix:before,
-.clearfix:after {
-    content: " ";
-    display: table;
-}
-
-.clearfix:after { clear: both; }
+.ir {background-color: transparent; border: 0; overflow: hidden; *text-indent: -9999px; }
+.ir:before { content: ""; display: block; width: 0; height: 100%; }
+.hidden { display: none !important; visibility: hidden; }
+.visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+.invisible { visibility: hidden; } 
+.clearfix:before, .clearfix:after { content: " "; display: table; }
+.clearfix:after { clear: both; } 
 .clearfix { *zoom: 1; }
 
 /* 
  * Print styles
  */
-
 @media print {
-    * {
-        background: transparent !important;
-        color: #000 !important; /* Black prints faster: h5bp.com/s */
-        box-shadow: none !important;
-        text-shadow: none !important;
-    }
-
+    * { background: transparent !important; color: #000 !important; box-shadow: none !important; text-shadow: none !important; }
     a, a:visited { text-decoration: underline; }
     a[href]:after {  content: " (" attr(href) ")"; }
     abbr[title]:after {  content: " (" attr(title) ")"; }
@@ -223,25 +341,12 @@ textarea { resize: vertical; }
     /*
      * Don't show links for images, or javascript/internal links
      */
-
-    .ir a:after,
-    a[href^="javascript:"]:after,
-    a[href^="#"]:after {
-        content: "";
-    }
-
-    pre,
-    blockquote {
-        border: 1px solid #999;
-        page-break-inside: avoid;
-    }
-
-    thead {  display: table-header-group; /* h5bp.com/t */ }
+    .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }
+    pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+    thead {  display: table-header-group; }
     tr, img { page-break-inside: avoid; }
     img {  max-width: 100% !important; }
-
     @page {  margin: 0.5cm; }
-
     p, h2, h3 { orphans: 3; widows: 3; }
     h2, h3 { page-break-after: avoid; }
 }
