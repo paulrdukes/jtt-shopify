@@ -6,23 +6,16 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      
-        {% if template ==  'index' %}    
-          <title>{{ shop.name }} | {{ shop.description }}</title>
-        {% elseif %}
-           <title>{{ page_title }} | {{ shop.name }}</title>
-        {% endif %}
+        <title>{{ shop.name }} | {{ page_title }}</title>
         
-        {% if template contains 'product' %}
-          <meta name="description" content="{{ product.description | strip_html | strip_newlines | truncate: maxmeta | escape }}" />
-        {% elseif shop.description != '' %}
-          <meta name="description" content="{{ shop.description }}" />
+        <!-- TODO: Add elseif product.description -->
+        {% if shop.description != '' %}
+        <meta name="description" content="{{ shop.description }}" />
         {% endif %}
-        
-        <link rel="canonical" href="{{ canonical_url }}" />
         
         <meta name="viewport" content="width=device-width">
-       
+        <link rel="canonical"   href="{{ canonical_url }}" />
+        
         
         {{ 'style.css' | asset_url | stylesheet_tag }}
         {{ 'modernizr-2.6.2-respond-1.1.0.min.js' | asset_url | script_tag }}
@@ -35,7 +28,7 @@
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
        
-       <div id="aside">
+       <div id="aside" class="left">
          {% if settings.use_logo_image %}
           <img src="{{ 'logo.png' | asset_url }}" />
          {% else %}
@@ -64,6 +57,7 @@
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.3.min.js"><\/script>')</script>
         {{ 'jquery-1.8.3.min.js' | asset_url | script_tag }}
+        {{ 'plugins.js' | asset_url | script_tag }}
         {{ 'main.js' | asset_url | script_tag }}
         
         {% include 'analytics' %}

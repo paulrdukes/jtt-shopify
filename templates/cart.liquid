@@ -5,8 +5,6 @@
   }
 </script>
 
-
-
 {% if settings.use_t_and_c %}
 
 <script type="text/javascript">
@@ -28,8 +26,9 @@
    });
 </script>
 {% endif %}
+
 <div class="content">
-  <h2 class="push-down">Your Cart</h2>
+  <h2>Your Cart</h2>
 
 {% if cart.item_count == 0 %} 
   <p>You don't have anything in your cart yet!</p>
@@ -80,7 +79,7 @@
           </td>
           
           <td>
-            <a href="#" onclick="remove_item({{item.variant.id}}); return false;" class="remove button">remove</a>            
+            <a href="#" onclick="remove_item({{item.variant.id}}); return false;" class="button">remove</a>            
           </td>
         </tr>
         {% endfor %}

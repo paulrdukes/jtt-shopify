@@ -1,12 +1,12 @@
 <div class="product clearfix">
 	<div class="product-header clearfix">
-		<div class="product-title">
+		<div class="product-title left">
 			<h3>
 				<a href="{{ product.url }}" alt="{{ product.title}}">{{ product.title }}</a>
 			</h3>
 		</div>
 		
-		<div class="product-price">
+		<div class="product-price right">
 			<strong>
 				{% if product.price_varies %} 
 				{{ product.price_min | money }} - {{ product.price_max | money }}       
@@ -18,7 +18,7 @@
 	</div>
 	<div class="product-wrapper" >
 		<a href="{{ product.url }}" alt="{{ product.title}}">
-			<img class="product-image" src="{{ product.featured_image | product_img_url: 'compact' }}"  alt="{{ product.title }}"/>
+			<img class="product-image left" src="{{ product.featured_image | product_img_url: 'compact' }}"  alt="{{ product.title }}"/>
 		</a>
 			
 		{{ product.description }}

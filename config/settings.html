@@ -28,7 +28,7 @@
     		<tr>
     			<td><label for="logo_image_upload">Upload your logo</label></td>
     			<td>
-    				<input type="file" id="logo_image_upload" name="logo.png" data-max-width="" data-max-height="" />
+    				<input type="file" id="logo_image_upload" name="logo.png" data-max-width="300px" />
     			</td>
     		</tr>
     		
@@ -40,13 +40,13 @@
     			<td><label for="logo_font">Logo Font</label></td>
     			<td>
     				<select class="font" id="logo_font" name="logo_font" >
-    					<option value="BebasRegular, sans-serif">Bebas Regular</option>
-    					<option value="LeagueGothicRegular, sans-serif" selected="selected">League Gothic</option>
+    					<option value="'BebasRegular', sans-serif">Bebas Regular</option>
+    					<option value="'LeagueGothicRegular', sans-serif" selected="selected">League Gothic</option>
     				</select>
     			</td>
     		</tr>
     		<tr>
-    			<td><label for="logo_size">Logo Size</label></td>
+    			<td><label for="logo_size">Logo Text Size</label></td>
     			<td>
     				<select id="logo_size" name="logo_size">
     					<option value="2em">2em</option>
@@ -84,7 +84,7 @@
 				<td>
 					<select class="font" name="nav_font" id="nav_font">
 						<option value="BebasRegular, sans-serif">Bebas Regular</option>
-						<option value="OSPDIN, sans-serif">OSP-DIN</option>
+						<option value="'LeagueGothicRegular', sans-serif">League Gothic</option>
 					</select>
 				</td>
 			</tr>
@@ -184,7 +184,16 @@
 <fieldset>
 	<legend>Footer</legend>
 	<table>
-
+		<tr>
+			<td><label for="powered_by">Powered by Shopify</label></td>
+			<td><input type="checkbox" id="powered_by" name="powered_by" value="1" checked="checked" /></td>
+		</tr>
+		
+		<tr>
+			<td><label for="search_on">Search</label></td>
+			<td><input type="checkbox" id="search_on" name="search_on" value="1" checked="checked" />
+			</td>
+		</tr>
 	</table>
 </fieldset>
 <fieldset>
@@ -243,25 +252,10 @@
 	<!-- add more options for analytics -->
     <legend>Additional Options</legend>
 	<table>
-		<tr>
-			<td><label>Border Radius</label></td>
-			<td><input type="checkbox" id="radius_selected" name="radius_selected" value="1" checked="checked" /></td>
-			
-		</tr>
-		<tr>
-			<td><label>Google Analytics</label></td>
+			<tr>
+			<td><label for="google_analytics_id">Google Analytics</label></td>
 			<td>UA-<input id="google_analytics_id" name="google_analytics_id" value="XXXXXX-X" class="long" /></td>
 			<td><input type="checkbox" id="google_analytics" name="google_analytics" value="1" checked="checked" /></td>
-		</tr>
-		<tr>
-			<td><label>Powered by Shopify</label></td>
-			<td><input type="checkbox" id="powered_by" name="powered_by" value="1" checked="checked" /></td>
-		</tr>
-		
-		<tr>
-			<td><label>Search</label></td>
-			<td><input type="checkbox" id="search_on" name="search_on" value="1" checked="checked" />
-			</td>
 		</tr>
 	</table>
 </fieldset>

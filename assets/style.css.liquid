@@ -226,7 +226,6 @@ textarea { resize: vertical; }
    /* width: 33.333%; -- for responsive design */
     width: 320px;
     background-color: {{settings.sidebar_background_color}};
-    float:left;
     
     -webkit-border-radius: 0 0 10px 0;
     -moz-border-radius: 0 0 10px 0;
@@ -252,28 +251,30 @@ textarea { resize: vertical; }
             display: block;  
             padding: 5px 10px; 
             text-decoration: none;
+            font-family: {{ settings.nav_font }}
+
 
         } 
         #nav a:hover { background-color: {{ settings.nav_background_hover_color }}; }
 
-    #login{ float: left; margin: 10px; }
+    #login{ margin: 10px; }
     #cart,#powered-by, #search { margin:10px 5px;}
-    #powered-by{ float: left;}
-    #cart, #search { float: right; }
+    #powered-by{ }
+    #cart, #search {  }
         #search form{  }
         #search input[type="text"],#search input[type="text"]:focus{
             border:none;
         }
-        #search button{ 
+        input[type="submit"]{ 
             border: none;
             background-color: {{ settings.nav_background_color }};
             color:{{ settings.nav_text_color }};  
         }
-        #search button:hover{
+        input[type="submit"]:hover{
             color:{{ settings.nav_text_hover_color }};  
             background-color:{{ settings.nav_background_hover_color }};
         }
-    #social {float:left;}
+    #social {}
     #social ul li{list-style: none; display: inline-block;}
     a {text-decoration: none; color:{{ settings.nav_text_color }}; }
     a:hover { color:{{ settings.nav_text_hover_color }}; }
@@ -289,7 +290,7 @@ textarea { resize: vertical; }
 
 }
 
-
+.button{}
 
 
 #main{
@@ -313,6 +314,8 @@ h1,h2,h3,h4,h5,h6{
     text-transform: {{settings.logo_case}};
 }
 
+
+
 /*
  * Product Selectors
  */
@@ -328,6 +331,19 @@ h1,h2,h3,h4,h5,h6{
         float:left; 
         margin: 0 10px 10px 0; 
     }
+
+/*
+ * Cart Selectors
+ */
+.cart-thumb{}
+.cart-title, .cart-unitprice, .cart-quantity, .cart-total{margin-right: 20px;}
+.cart-remove{}
+.cart-item{}
+.update{}
+.checkout{}
+
+tr:nth-of-type(2n){background-color: #aaa;}
+
 /* 
  * Media Queries 
 
@@ -350,7 +366,8 @@ h1,h2,h3,h4,h5,h6{
 .clearfix:before, .clearfix:after { content: " "; display: table; }
 .clearfix:after { clear: both; } 
 .clearfix { *zoom: 1; }
-
+.left{ float:left; }
+.right{ float: right; }
 /* 
  * Print styles
  */
