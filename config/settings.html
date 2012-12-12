@@ -28,7 +28,7 @@
     		<tr>
     			<td><label for="logo_image_upload">Upload your logo</label></td>
     			<td>
-    				<input type="file" id="logo_image_upload" name="logo.png" data-max-width="300px" />
+    				<input type="file" id="logo_image_upload" name="logo.png" data-max-width="400px" />
     			</td>
     		</tr>
     		
@@ -36,7 +36,7 @@
 	    		<td colspan="2"><hr /> If you're not using a logo image use this section to change the font and font color. 
 	    		</td>
     		</tr>
-    			<tr>
+    		<tr>
     			<td><label for="logo_font">Logo Font</label></td>
     			<td>
     				<select class="font" id="logo_font" name="logo_font" >
@@ -55,7 +55,25 @@
     					<option value="5em">5em</option>
     					<option value="6em" selected="selected">6em</option>
     				</select>
-    					
+    			</td>
+    		</tr>	
+    		<tr>
+    			<td><label for="sub_title_font">Sub Title Font</label></td>
+    			<td>
+    				<select class="font" id="sub_title_font" name="sub_title_font" >
+    					<option value="'BebasRegular', sans-serif">Bebas Regular</option>
+    					<option value="'LeagueGothicRegular', sans-serif" selected="selected">League Gothic</option>
+    				</select>
+    			</td>
+    		</tr>
+			<tr>
+    			<td><label for="sub_title_size">Sub Title Size</label></td>
+    			<td>
+    				<select id="sub_title_size" name="sub_title_size">
+    					<option value="1em">1em</option>
+    					<option value="2em" selected="selected">2em</option>
+    					<option value="3em">3em</option>
+    				</select>
     			</td>
     		</tr>	
     		<tr>
@@ -178,11 +196,8 @@
 		</table>
 </fieldset>
 
-
-
-
 <fieldset>
-	<legend>Footer</legend>
+	<legend>Banner</legend>
 	<table>
 		<tr>
 			<td><label for="powered_by">Powered by Shopify</label></td>
@@ -191,9 +206,13 @@
 		
 		<tr>
 			<td><label for="search_on">Search</label></td>
-			<td><input type="checkbox" id="search_on" name="search_on" value="1" checked="checked" />
-			</td>
+			<td><input type="checkbox" id="search_on" name="search_on" value="1" checked="checked" /></td>
 		</tr>
+		<tr>
+			<td><label for="search_button_text">Search Button Text</label></td>
+			<td><input type="text" value="Search" id="search_button_text" name="search_button_text" /></td>
+		</tr>
+		
 	</table>
 </fieldset>
 <fieldset>
@@ -252,7 +271,14 @@
 	<!-- add more options for analytics -->
     <legend>Additional Options</legend>
 	<table>
-			<tr>
+		<tr>
+			<td><label for="content_placement">Content Placement</label></td>
+			<td><select name="content_placement" id="content_placement">
+				<option value="">Left</option>
+				<option value="0 auto" selected="selected">Center</option>
+			</select></td>
+		</tr>
+		<tr>
 			<td><label for="google_analytics_id">Google Analytics</label></td>
 			<td>UA-<input id="google_analytics_id" name="google_analytics_id" value="XXXXXX-X" class="long" /></td>
 			<td><input type="checkbox" id="google_analytics" name="google_analytics" value="1" checked="checked" /></td>

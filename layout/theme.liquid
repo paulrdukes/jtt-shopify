@@ -27,13 +27,26 @@
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
-       
-       <div id="aside" class="left">
-         {% if settings.use_logo_image %}
+      <div id="banner-wrapper"> 
+        <div id="banner">
+          {% include 'login' %}
+          {% include 'cart' %}
+          {% include 'search' %}
+        </div>
+        
+
+      </div>  
+      <div id="logo-banner" class="right">
+        {% if settings.use_logo_image %}
           <img src="{{ 'logo.png' | asset_url }}" />
-         {% else %}
-          <h1 class="title"> {{shop.name}} </h1>
-         {% endif %}
+        {% else %}
+          <h1 class="fancy title">{{shop.name}}</h1>
+        {% endif %}
+        <div class="sub-title right"> {{ shop.description }} </div>
+      </div>
+
+      <div id="aside" class="left">
+         
             <div id="nav">
                <ul>
                    {% for link in linklists.main-menu.links %}
@@ -41,19 +54,19 @@
                    {% endfor %}
                </ul>
             </div>
-            {% include 'login' %}
             {% include 'social' %}
+            
+            {% include 'payments' %}
+            
+            {% include 'powered-by' %}
+            
             
        </div>
        
        <div id="main">
             {{ content_for_layout }}
        </div>
-       <div id="footer"> 
-        {% include 'powered-by' %}
-        {% include 'cart' %}
-        {% include 'search' %}
-       </div>
+
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.3.min.js"><\/script>')</script>
         {{ 'jquery-1.8.3.min.js' | asset_url | script_tag }}

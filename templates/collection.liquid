@@ -10,11 +10,13 @@
 		<a href="{% if collection.handle == 'all' %}/collections/all{% else %}{{ collection.url }}{% endif %}" class="current-tag">All</a>
 	{% endif %}
 	{% for tag in collection.all_tags %}
-    {% if current_tags contains tag %}
-    <li class="active">{{ tag | link_to_tag: tag }}</li>
-    {% else %}
-    <li>{{ tag | link_to_tag: tag }}</li>
-    {% endif %}
+    
+	    {% if current_tags contains tag %}
+	    	<li class="active">{{ tag | link_to_tag: tag }}</li>
+	    {% else %}
+	    	<li>{{ tag | link_to_tag: tag }}</li>
+	    {% endif %}
+    
 	{% endfor %}
 </div>
 {% endif %}
