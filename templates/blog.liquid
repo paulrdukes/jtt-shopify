@@ -14,7 +14,7 @@
 
 	  {% for article in blog.articles  %}
 
-	  <div class="content-box">
+	  <div class="blog-content">
 	    <h2><a href="{{ article.url }}">{{ article.title }}</a></h2>
 	    <div class="date">{{ article.created_at | date: "%m.%d.%Y" }}</div>
 	    {% if article.excerpt.size > 0 %}

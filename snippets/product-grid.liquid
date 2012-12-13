@@ -1,0 +1,19 @@
+<li class="product">
+    
+			<div class="title">
+				<a href="{{ product.url }}" alt="{{ product.title}}">{{ product.title }}</a>
+			</div>
+			<a href="{{ product.url }}" alt="{{ product.title}}">
+				<img class="product-image" src="{{ product.featured_image | product_img_url: 'compact' }}"  alt="{{ product.title }}"/>
+			</a>
+		<div class="product-price right">
+			<strong>
+				{% if product.price_varies %} 
+				{{ product.price_min | money }} - {{ product.price_max | money }}       
+				{% else %}
+				{{ product.price | money }}
+				{% endif %}
+			</strong>
+		</div>
+	
+</li>

@@ -3,7 +3,5 @@
  */
 
 $(document).ready(function(){
-  
    $(".fancy").lettering('words');
-
 });

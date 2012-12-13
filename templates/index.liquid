@@ -1,7 +1,14 @@
 <div id="introduction">
 	<h1> {{pages.frontpage.title}} </h1>
-	{{ pages.frontpage.content }}
+		{{ pages.frontpage.content }}
 </div>
-{% for product in collections.frontpage.products %}
-{% include 'loop' %}
-{% endfor %}
+<!--
+{% include 'carousel' %}
+-->
+<ul id="product-loop">
+	{% for product in collections.frontpage.products %}
+
+		{% include 'loop' %}
+	
+	{% endfor %}
+</ul>

@@ -1,3 +1,7 @@
+{% if template contains 'index' %}	
+	{% include 'product-grid' %}
+{% else %}
+
 <div class="product clearfix">
 	<div class="product-header clearfix">
 		<div class="product-title left">
@@ -16,11 +20,12 @@
 			</strong>
 		</div>
 	</div>
-	<div class="product-wrapper" >
+			
+	<div class="product-wrapper left"  >
 		<a href="{{ product.url }}" alt="{{ product.title}}">
 			<img class="product-image left" src="{{ product.featured_image | product_img_url: 'compact' }}"  alt="{{ product.title }}"/>
 		</a>
-			
+	
 		{{ product.description }}
-	</div>
-</div>
+	</div>	
+{% endif %}
