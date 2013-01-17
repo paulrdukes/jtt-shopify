@@ -1,0 +1,9 @@
+<div class="product-price right">
+	<strong>
+		{% if product.price_varies %}
+			{{ product.price_min | money | replace: '.', ' <sup>' }}</sup> - {{ product.price_max | money | replace: '.', ' <sup>' }}</sup>
+		{% else %}
+			{{ product.price | money | replace: '.', ' <sup>' }}</sup>
+		{% endif %}
+	</strong>
+</div>
