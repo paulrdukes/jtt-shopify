@@ -1,17 +1,19 @@
-{%if settings.sm_facebook || settings.sm_google_plus || settings.sm_flickr || settings.sm_twitter || settings.sm_vimeo || settings.sm_youtube %}
+{%if settings.sm_facebook || settings.sm_flickr || settings.sm_google_plus || settings.sm_instagram || settings.sm_twitter || settings.sm_vimeo || settings.sm_youtube %}
 <div id="social" class="left">
 	<ul id="sm-icons" class="clearfix">
     	{% if settings.sm_facebook %}<li><a href="{{settings.sm_facebook_link}}" class="icon" data-icon="&#xF003"><span class="visuallyhidden">Facebook</span></a></li>{% endif %}
 
-      	{% if settings.sm_google_plus %}<li><a href="{{settings.sm_google_plus_link}}" class="icon" data-icon="&#xf00d"></a><span class="visuallyhidden">Google Plus</span></li>{% endif %}
+      {% if settings.sm_flickr %}<li><a href="{{settings.sm_flickr_link}}" class="icon ir" data-icon="&#xf010"><span class="visuallyhidden">Flickr</span></a></li>{% endif %}
 
-      	{% if settings.sm_flickr %}<li><a href="{{settings.sm_flickr_link}}" class="icon ir" data-icon="&#xf010"><span class="visuallyhidden">Flickr</span></a></li>{% endif %}
+      {% if settings.sm_google_plus %}<li><a href="{{settings.sm_google_plus_link}}" class="icon" data-icon="&#xf00d"></a><span class="visuallyhidden">Google Plus</span></li>{% endif %}
 
-       	{% if settings.sm_twitter %}<li><a href="{{settings.sm_twitter_link}}" class="icon" data-icon=" &#xf004"><span class="visuallyhidden">Twitter</span></a></li>{% endif %}
+      {% if settings.sm_instagram %}<li><a href="{{settings.sm_instagram_link}}" class="icon ir" data-icon="&#xf015"><span class="visuallyhidden">Instagram</span></a></li>{% endif %}
 
-      	{% if settings.sm_vimeo %}<li><a href="{{settings.sm_vimeo_link}}" class="icon" data-icon="&#xf00f"><span class="visuallyhidden">Vimeo</span></a></li>{% endif %}
+      {% if settings.sm_twitter %}<li><a href="{{settings.sm_twitter_link}}" class="icon" data-icon=" &#xf004"><span class="visuallyhidden">Twitter</span></a></li>{% endif %}
 
-      	{% if settings.sm_youtube %}<li><a href="{{settings.sm_youtube_link}}" class="icon" data-icon="&#xf00e"><span class="visuallyhidden">Youtube</span></a></li>{% endif %}
+      {% if settings.sm_vimeo %}<li><a href="{{settings.sm_vimeo_link}}" class="icon" data-icon="&#xf00f"><span class="visuallyhidden">Vimeo</span></a></li>{% endif %}
+
+      {% if settings.sm_youtube %}<li><a href="{{settings.sm_youtube_link}}" class="icon" data-icon="&#xf00e"><span class="visuallyhidden">Youtube</span></a></li>{% endif %}
     </ul>
 </div>
 {% endif %}
